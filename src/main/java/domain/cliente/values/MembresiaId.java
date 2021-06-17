@@ -1,4 +1,6 @@
 package domain.cliente.values;
 
-public class MembresiaId {
+import co.com.sofka.domain.generic.Identity;
+
+public class MembresiaId extends Identity {
 }

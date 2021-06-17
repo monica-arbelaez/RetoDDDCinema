@@ -1,4 +1,6 @@
 package domain.cliente.values;
 
-public class ConsumoId {
+import co.com.sofka.domain.generic.Identity;
+
+public class ConsumoId extends Identity {
 }
