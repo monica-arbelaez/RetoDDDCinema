@@ -11,9 +11,9 @@ public class Precio implements ValueObject<Double> {
 
     public Precio(Double value) {
     Objects.requireNonNull(value);
-      if(value.isNaN()){
-          throw new IllegalArgumentException("Debe de tener un precio");
-      }
+        if(value < 1 ){
+            throw new IllegalArgumentException("El precio no puede ser igual o menor a cero");
+        }
        this.value= value;
     }
 

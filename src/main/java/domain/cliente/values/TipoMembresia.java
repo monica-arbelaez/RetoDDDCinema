@@ -1,21 +1,18 @@
-package domain.boleto.values;
+package domain.cliente.values;
 
 import co.com.sofka.domain.generic.ValueObject;
-import com.sun.nio.sctp.IllegalReceiveException;
 
 import java.util.Objects;
 
-public class Silla implements ValueObject<String> {
+public class TipoMembresia implements ValueObject<String> {
     private final String value;
 
-    public Silla(String value){
-        Objects.requireNonNull(value,  "La cedula es obligatoria");
+    public TipoMembresia(String value){
+        Objects.requireNonNull(value, "El correo no puede estar vacio");
         if(value.isBlank()){
-            throw new IllegalReceiveException("el campo de la silla no puede estar vacio");
+            throw new IllegalArgumentException("tipo de membresia no puede estar vacia");
         }
-
         this.value = value;
-
     }
 
     @Override
@@ -27,8 +24,8 @@ public class Silla implements ValueObject<String> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Silla silla = (Silla) o;
-        return Objects.equals(value, silla.value);
+        TipoMembresia tipo = (TipoMembresia) o;
+        return Objects.equals(value, tipo.value);
     }
 
     @Override

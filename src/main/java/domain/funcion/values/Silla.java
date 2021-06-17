@@ -1,11 +1,12 @@
 package domain.funcion.values;
 
+import co.com.sofka.domain.generic.ValueObject;
 import com.sun.nio.sctp.IllegalReceiveException;
 
 import java.awt.*;
 import java.util.Objects;
 
-public class Silla {
+public class Silla implements ValueObject<List> {
     private  final List value;
 
     public Silla( List value){

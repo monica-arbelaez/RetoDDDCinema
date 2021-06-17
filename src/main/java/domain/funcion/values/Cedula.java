@@ -1,10 +1,11 @@
 package domain.funcion.values;
 
+import co.com.sofka.domain.generic.ValueObject;
 import com.sun.nio.sctp.IllegalReceiveException;
 
 import java.util.Objects;
 
-public class Cedula {
+public class Cedula implements ValueObject<String> {
 
     private final String value;
 

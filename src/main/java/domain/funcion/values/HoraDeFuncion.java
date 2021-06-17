@@ -6,12 +6,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
-public class HoraDeFuncion implements ValueObject {
+public class HoraDeFuncion implements ValueObject<String> {
 
-    private final String date;
+    private final String value;
 
-    public HoraDeFuncion(){
-        this.date = Objects.requireNonNull(dateandhours());
+    public HoraDeFuncion(String value){
+
+        this.value = Objects.requireNonNull(dateandhours());
     }
 
     public String dateandhours() {
@@ -21,7 +22,7 @@ public class HoraDeFuncion implements ValueObject {
     }
 
     public String value(){
-        return date;
+        return value;
     }
 
     @Override
@@ -29,11 +30,11 @@ public class HoraDeFuncion implements ValueObject {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         HoraDeFuncion that = (HoraDeFuncion) o;
-        return Objects.equals(date, that.date);
+        return Objects.equals(value, that.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(date);
+        return Objects.hash(value);
     }
 }

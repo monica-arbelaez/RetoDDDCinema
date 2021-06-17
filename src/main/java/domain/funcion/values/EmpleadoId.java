@@ -3,13 +3,13 @@ package domain.funcion.values;
 import co.com.sofka.domain.generic.Identity;
 
 public class EmpleadoId extends Identity {
-    private EmpleadoId(String uid) {
-        super(uid);
+    private EmpleadoId(String id) {
+        super(id);
     }
 
     public EmpleadoId(){}
 
-    public static EmpleadoId of(String uid){
-        return new EmpleadoId(uid);
+    public static EmpleadoId of(String id){
+        return new EmpleadoId(id);
     }
 }
