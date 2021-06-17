@@ -8,7 +8,7 @@ public class TipoMembresia implements ValueObject<String> {
     private final String value;
 
     public TipoMembresia(String value){
-        Objects.requireNonNull(value, "El correo no puede estar vacio");
+        Objects.requireNonNull(value, "Debe de tener una membresia");
         if(value.isBlank()){
             throw new IllegalArgumentException("tipo de membresia no puede estar vacia");
         }

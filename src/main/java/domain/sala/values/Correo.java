@@ -1,26 +1,25 @@
-package domain.funcion.values;
+package domain.sala.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 import com.sun.nio.sctp.IllegalReceiveException;
 
 import java.util.Objects;
 
-public class Cedula implements ValueObject<String> {
-
+public class Correo implements ValueObject<String> {
     private final String value;
 
-    public Cedula(String value){
-        Objects.requireNonNull(value,  "La cedula es obligatoria");
+    public Correo(String value){
+        Objects.requireNonNull(value, "El correo es obligatorio");
         if(value.isBlank()){
             throw new IllegalReceiveException("el campo de la cedula no puede estar vacio");
         }
-        if(value.matches("/[VE]-[0-9]{1,8}/")){
+        if(value.matches("^([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$")){
             throw new IllegalReceiveException("El cedula no puede tener caracteres");
         }
-        this.value = value;
-
+        this.value=value;
     }
 
+    @Override
     public String value() {
         return value;
     }
@@ -29,8 +28,8 @@ public class Cedula implements ValueObject<String> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Cedula cedula = (Cedula) o;
-        return Objects.equals(value, cedula.value);
+        Correo correo = (Correo) o;
+        return Objects.equals(value, correo.value);
     }
 
     @Override

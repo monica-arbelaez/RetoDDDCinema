@@ -1,4 +1,4 @@
-package domain.funcion.values;
+package domain.sala.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 import com.sun.nio.sctp.IllegalReceiveException;

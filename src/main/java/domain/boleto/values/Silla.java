@@ -1,21 +1,19 @@
 package domain.boleto.values;
 
 import co.com.sofka.domain.generic.ValueObject;
-import com.sun.nio.sctp.IllegalReceiveException;
 
 import java.util.Objects;
 
 public class Silla implements ValueObject<String> {
+
     private final String value;
 
     public Silla(String value){
-        Objects.requireNonNull(value,  "La cedula es obligatoria");
+        Objects.requireNonNull(value, "Debe de tener una membresia");
         if(value.isBlank()){
-            throw new IllegalReceiveException("el campo de la silla no puede estar vacio");
+            throw new IllegalArgumentException("tipo de membresia no puede estar vacia");
         }
-
         this.value = value;
-
     }
 
     @Override

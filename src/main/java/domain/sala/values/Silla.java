@@ -1,20 +1,19 @@
-package domain.funcion.values;
+package domain.sala.values;
 
 import co.com.sofka.domain.generic.ValueObject;
-import com.sun.nio.sctp.IllegalReceiveException;
 
-import java.awt.*;
 import java.util.Objects;
+import java.util.Set;
 
-public class Silla implements ValueObject<List> {
-    private  final List value;
+public class Silla implements ValueObject<Set> {
+    private  final Set value;
 
-    public Silla( List value){
+    public Silla( Set value){
         this.value = value;
-        Objects.requireNonNull(value,  "Debes de poder una silla");
+        Objects.requireNonNull(value,  "Debes de tener una silla");
 
     }
-    public List value() {
+    public Set value() {
         return value;
     }
 

@@ -1,8 +1,8 @@
-package domain.funcion.entity;
+package domain.sala.entity;
 
 import co.com.sofka.domain.generic.Entity;
-import domain.funcion.values.Duracion;
-import domain.funcion.values.PeliculaId;
+import domain.sala.values.Duracion;
+import domain.sala.values.PeliculaId;
 import domain.genericvalues.Nombre;
 
 public class Pelicula extends Entity<PeliculaId>{

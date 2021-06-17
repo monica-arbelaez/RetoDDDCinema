@@ -1,18 +1,21 @@
-package domain.funcion.entity;
+package domain.sala.entity;
 
 import co.com.sofka.domain.generic.Entity;
-import domain.funcion.values.Cedula;
-import domain.funcion.values.EmpleadoId;
+import domain.sala.values.Cedula;
+import domain.sala.values.Correo;
+import domain.sala.values.EmpleadoId;
 import domain.genericvalues.Nombre;
 
 public class Empleado extends Entity<EmpleadoId> {
     private Nombre nombre;
     private Cedula cedula;
+    private Correo correo;
 
-    public Empleado(EmpleadoId entityId, Nombre nombre, Cedula cedula) {
+    public Empleado(EmpleadoId entityId, Nombre nombre, Cedula cedula, Correo correo) {
         super(entityId);
         this.nombre = nombre;
         this.cedula = cedula;
+        this.correo = correo;
     }
 
     public Nombre getNombre() {
@@ -23,4 +26,7 @@ public class Empleado extends Entity<EmpleadoId> {
         return cedula;
     }
 
+    public Correo getCorreo() {
+        return correo;
+    }
 }

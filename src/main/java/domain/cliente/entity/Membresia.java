@@ -6,17 +6,17 @@ import domain.cliente.values.MembresiaId;
 import domain.cliente.values.TipoMembresia;
 
 public class Membresia extends Entity<MembresiaId> {
-    private final TipoMembresia tipo;
+    private final TipoMembresia tipoMembresia;
     private  final FechaDeVencimiento fechaDeVencimiento;
 
-    public Membresia(MembresiaId entityId, TipoMembresia tipo, FechaDeVencimiento fechaDeVencimiento) {
+    public Membresia(MembresiaId entityId, TipoMembresia tipoMembresia, FechaDeVencimiento fechaDeVencimiento) {
         super(entityId);
-        this.tipo = tipo;
+        this.tipoMembresia = tipoMembresia;
         this.fechaDeVencimiento = fechaDeVencimiento;
     }
 
-    public TipoMembresia getTipo() {
-        return tipo;
+    public TipoMembresia getTipoMembresia() {
+        return tipoMembresia;
     }
 
     public FechaDeVencimiento getFechaDeVencimiento() {

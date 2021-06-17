@@ -1,4 +1,4 @@
-package domain.funcion.values;
+package domain.sala.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
@@ -6,11 +6,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
-public class HoraDeFuncion implements ValueObject<String> {
+public class FechaHoraFuncionPelicula implements ValueObject<String> {
 
     private final String value;
 
-    public HoraDeFuncion(String value){
+    public FechaHoraFuncionPelicula(String value){
 
         this.value = Objects.requireNonNull(dateandhours());
     }
@@ -29,7 +29,7 @@ public class HoraDeFuncion implements ValueObject<String> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        HoraDeFuncion that = (HoraDeFuncion) o;
+        FechaHoraFuncionPelicula that = (FechaHoraFuncionPelicula) o;
         return Objects.equals(value, that.value);
     }
 
