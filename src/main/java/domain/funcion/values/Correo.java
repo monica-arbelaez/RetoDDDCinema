@@ -1,4 +1,4 @@
 package domain.funcion.values;
 
-public class Nombre {
+public class Correo {
 }
