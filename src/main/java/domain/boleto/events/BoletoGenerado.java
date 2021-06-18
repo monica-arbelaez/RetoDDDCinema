@@ -1,7 +1,6 @@
 package domain.boleto.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import domain.boleto.values.BoletoId;
 import domain.boleto.values.Silla;
 import domain.cliente.values.ClienteId;
 import domain.genericvalues.Precio;

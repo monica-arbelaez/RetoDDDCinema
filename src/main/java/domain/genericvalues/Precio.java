@@ -10,11 +10,11 @@ public class Precio implements ValueObject<Double> {
     private final Double value;
 
     public Precio(Double value) {
-    Objects.requireNonNull(value);
-        if(value < 1 ){
+        Objects.requireNonNull(value);
+        if (value < 1) {
             throw new IllegalArgumentException("El precio no puede ser igual o menor a cero");
         }
-       this.value= value;
+        this.value = value;
     }
 
     @Override

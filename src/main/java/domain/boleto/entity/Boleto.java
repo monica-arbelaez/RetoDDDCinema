@@ -64,11 +64,7 @@ public class Boleto extends AggregateEvent<BoletoId> {
         Objects.requireNonNull(silla);
         appendChange(new SillaModificada(entityId, silla));
     }
-    public  void modificarFechaFuncion(BoletoId entityId, FechaFuncion fechaFuncion){
-        Objects.requireNonNull(entityId);
-        Objects.requireNonNull(fechaFuncion);
-        appendChange(new FechaDeFuncionModificada(entityId, fechaFuncion));
-    }
+
 
 
 

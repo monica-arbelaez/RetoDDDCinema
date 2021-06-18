@@ -1,5 +1,6 @@
 package domain.sala.entity;
 
+import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.Entity;
 import domain.genericvalues.Nombre;
 import domain.sala.values.FechaHoraDeFuncionId;
@@ -9,17 +10,13 @@ import domain.sala.values.Silla;
 import java.util.Set;
 
 
-public class Sala extends Entity<SalaId> {
-    private Nombre nombre;
-    private Set<Silla> sillas;
-    private Set<FechaHoraDeFuncionId> fechaHoraDeFuncionIds;
-    private Pelicula pelicula;
-    private Empleado empleado;
+public class Sala extends AggregateEvent<SalaId> {
+    protected Nombre nombre;
+    protected Set<Silla> sillas;
+    protected Set<FechaHoraDeFuncionId> fechaHoraDeFuncionIds;
+    protected Pelicula pelicula;
+    protected Empleado empleado;
 
-//   public Funcion(FuncionId entityId){
-//       super(entityId);
-//       appenChange(new FuncionGenerada(horaDeFuncion, sala, pelicula, empleado))
-//   }
 
 
     public Sala(SalaId entityId, Nombre nombre, Set<Silla> sillas, Set<FechaHoraDeFuncionId> fechaHoraDeFuncionIds, Pelicula pelicula, Empleado empleado) {
@@ -29,25 +26,26 @@ public class Sala extends Entity<SalaId> {
         this.fechaHoraDeFuncionIds = fechaHoraDeFuncionIds;
         this.pelicula = pelicula;
         this.empleado = empleado;
+
     }
 
-    public Nombre getNombre() {
+    public Nombre nombre() {
         return nombre;
     }
 
-    public Set<Silla> getSillas() {
+    public Set<Silla> sillas() {
         return sillas;
     }
 
-    public Set<FechaHoraDeFuncionId> getFechaHoraDeFuncionIds() {
+    public Set<FechaHoraDeFuncionId> fechaHoraDeFuncionIds() {
         return fechaHoraDeFuncionIds;
     }
 
-    public Pelicula getPelicula() {
+    public Pelicula pelicula() {
         return pelicula;
     }
 
-    public Empleado getEmpleado() {
+    public Empleado empleado() {
         return empleado;
     }
 }

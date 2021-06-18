@@ -1,9 +1,7 @@
 package domain.boleto.entity;
 
 import co.com.sofka.domain.generic.EventChange;
-import domain.boleto.events.BoletoGenerado;
-import domain.boleto.events.BoletoModificado;
-import domain.boleto.events.PrecioModificado;
+import domain.boleto.events.*;
 
 public class BoletoChange extends EventChange {
 
@@ -26,6 +24,10 @@ public class BoletoChange extends EventChange {
         apply((PrecioModificado event)->{
             boleto.precio = event.getPrecio();
         });
+        apply((SillaModificada event)->{
+            boleto.silla = event.getSilla();
+        });
+
 
 
     }
