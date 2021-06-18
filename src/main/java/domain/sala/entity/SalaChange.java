@@ -15,9 +15,10 @@ public class SalaChange extends EventChange {
           sala.fechaHoraDeFuncionIds =new HashSet<>();
           sala.pelicula = event.getPelicula();
           sala.empleado = event.getEmpleado();
+          sala.nombre =event.getNombre();
        });
         apply((CedulaEmpleadoModificado event)->{
-            sala.modificarCedulaEmplaedo(event.getEmpleadoId(),event.getCedula());
+            sala.modificarCedulaEmpleado(event.getEmpleadoId(),event.getCedula());
 
         });
         apply((DuracionPeliculaModificada event)->{

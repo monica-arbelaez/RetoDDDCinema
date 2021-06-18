@@ -2,39 +2,33 @@ package domain.sala.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Objects;
+
+import java.time.DateTimeException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class FechaHoraFuncionPelicula implements ValueObject<String> {
 
+    private final LocalDate date;
     private final String value;
 
-    public FechaHoraFuncionPelicula(String value){
-
-        this.value = Objects.requireNonNull(dateandhours());
+    public FechaHoraFuncionPelicula(int day, int month, int year) {
+        try{
+            date = LocalDate.of(year,month,day);
+            if(date.isBefore(LocalDate.now())){
+                throw new IllegalArgumentException("La membresia esat vencida");            }
+        }catch (DateTimeException ex){
+            throw  new IllegalArgumentException(ex.getMessage());
+        }
+        value = generarFormato();
     }
 
-    public String dateandhours() {
-        Date dateandhours = new Date();
-        SimpleDateFormat Format = new SimpleDateFormat("YYYY/MM/DD '-' HH:mm:ss");
-        return Format.format(dateandhours);
+    private String generarFormato(){
+        return date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
     }
 
-    public String value(){
+    @Override
+    public String value() {
         return value;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        FechaHoraFuncionPelicula that = (FechaHoraFuncionPelicula) o;
-        return Objects.equals(value, that.value);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(value);
     }
 }

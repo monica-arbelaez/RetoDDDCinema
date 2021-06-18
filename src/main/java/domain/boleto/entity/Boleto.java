@@ -4,7 +4,6 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import domain.boleto.events.*;
 import domain.boleto.values.BoletoId;
-import domain.boleto.values.FechaFuncion;
 import domain.boleto.values.Silla;
 import domain.cliente.values.ClienteId;
 import domain.genericvalues.Precio;

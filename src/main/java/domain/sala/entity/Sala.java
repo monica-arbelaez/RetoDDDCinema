@@ -7,15 +7,13 @@ import domain.genericvalues.Nombre;
 import domain.sala.events.*;
 import domain.sala.values.*;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 
 public class Sala extends AggregateEvent<SalaId> {
     protected Nombre nombre;
-    protected Set<Silla> sillas;
-    protected Set<FechaHoraDeFuncionId> fechaHoraDeFuncionIds;
+    protected Set<Silla> sillas = new HashSet<>();
+    protected Set<FechaHoraDeFuncionId> fechaHoraDeFuncionIds = new HashSet<>();
     protected Pelicula pelicula;
     protected Empleado empleado;
 
@@ -41,7 +39,7 @@ public class Sala extends AggregateEvent<SalaId> {
         events.forEach((sala::applyEvent));
         return sala;
     }
-    public void modificarCedulaEmplaedo(EmpleadoId entityId, Cedula cedula){
+    public void modificarCedulaEmpleado(EmpleadoId entityId, Cedula cedula){
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(cedula);
         appendChange(new CedulaEmpleadoModificado(entityId,cedula));
