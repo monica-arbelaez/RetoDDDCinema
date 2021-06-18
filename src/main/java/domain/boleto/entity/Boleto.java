@@ -44,25 +44,26 @@ public class Boleto extends AggregateEvent<BoletoId> {
         return boleto;
     }
 
-    public void modificarBoleto(BoletoId entityId, ClienteId clienteId, SalaId salaId, FechaHoraDeFuncionId fechaHoraDeFuncionId, Precio precio, Silla silla){
+    public void modificarBoleto(BoletoId boletoId, ClienteId clienteId, SalaId salaId, FechaHoraDeFuncionId fechaHoraDeFuncionId, Precio precio, Silla silla){
+        Objects.requireNonNull(boletoId);
         Objects.requireNonNull(clienteId);
         Objects.requireNonNull(salaId);
         Objects.requireNonNull(fechaHoraDeFuncionId);
         Objects.requireNonNull(precio);
         Objects.requireNonNull(silla);
-        appendChange(new BoletoModificado(clienteId, salaId, fechaHoraDeFuncionId, precio, silla));
+        appendChange(new BoletoModificado(boletoId,clienteId, salaId, fechaHoraDeFuncionId, precio, silla)).apply();
 
     }
     public void modificarPrecio(BoletoId entityId, Precio precio){
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(precio);
-        appendChange(new PrecioModificado(entityId, precio));
+        appendChange(new PrecioModificado(entityId, precio)).apply();
     }
 
     public void modificarSilla(BoletoId entityId, Silla silla){
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(silla);
-        appendChange(new SillaModificada(entityId, silla));
+        appendChange(new SillaModificada(entityId, silla)).apply();
     }
 
 

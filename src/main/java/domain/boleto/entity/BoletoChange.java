@@ -15,17 +15,14 @@ public class BoletoChange extends EventChange {
 
         });
         apply((BoletoModificado event)->{
-            boleto.precio = event.getPrecio();
-            boleto.clienteId = event.getClienteId();
-            boleto.salaId = event.getSalaId();
-            boleto.silla = event.getSilla();
-            boleto.fechaHoraDeFuncionId = event.getFechaHoraDeFuncionId();
+            boleto.modificarBoleto(event.getBoletoId(),event.getClienteId(),event.getSalaId(),event.getFechaHoraDeFuncionId(), event.getPrecio(),event.getSilla());
+
         });
         apply((PrecioModificado event)->{
-            boleto.precio = event.getPrecio();
+            boleto.modificarPrecio(event.getBoletoId(),event.getPrecio());
         });
         apply((SillaModificada event)->{
-            boleto.silla = event.getSilla();
+            boleto.modificarSilla(event.getBoletoId(),event.getSilla());
         });
 
 

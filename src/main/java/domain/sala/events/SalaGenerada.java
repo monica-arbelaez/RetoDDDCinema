@@ -1,5 +1,7 @@
 package domain.sala.events;
 
+import co.com.sofka.domain.generic.DomainEvent;
+import domain.genericvalues.Nombre;
 import domain.sala.entity.Empleado;
 import domain.sala.entity.Pelicula;
 import domain.sala.values.FechaHoraDeFuncionId;
@@ -8,15 +10,15 @@ import domain.sala.values.Silla;
 
 import java.util.Set;
 
-public class SalaGenerada {
+public class SalaGenerada extends DomainEvent {
 
     private final Set<Silla> sillas;
     private final Set<FechaHoraDeFuncionId> fechaHoraDeFuncionIds;
     private final Pelicula pelicula;
     private final Empleado empleado;
 
-    public SalaGenerada(SalaId salaId, Set<Silla> sillas, Set<FechaHoraDeFuncionId> fechaHoraDeFuncionIds, Pelicula pelicula, Empleado empleado) {
-
+    public SalaGenerada(SalaId salaId, Nombre nombre, Set<Silla> sillas, Set<FechaHoraDeFuncionId> fechaHoraDeFuncionIds, Pelicula pelicula, Empleado empleado) {
+        super("cine.sala.salagenerada");
         this.sillas = sillas;
         this.fechaHoraDeFuncionIds = fechaHoraDeFuncionIds;
         this.pelicula = pelicula;

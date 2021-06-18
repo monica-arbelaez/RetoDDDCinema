@@ -69,6 +69,19 @@ public class Cliente extends AggregateEvent<ClienteId> {
         appendChange(new TipoMembresiaModificada(membresiaId,tipoMembresia,fechaDeVencimiento));
     }
 
+    public Nombre nombre() {
+        return nombre;
+    }
 
+    public Membresia membresia() {
+        return membresia;
+    }
 
+    public BoletoId boletoId() {
+        return boletoId;
+    }
+
+    public Consumo consumo() {
+        return consumo;
+    }
 }
