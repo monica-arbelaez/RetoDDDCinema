@@ -4,6 +4,7 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofka.domain.generic.Entity;
 import domain.boleto.events.SillaModificada;
+import domain.cliente.values.ClienteId;
 import domain.genericvalues.Nombre;
 import domain.sala.events.*;
 import domain.sala.values.*;
@@ -41,10 +42,11 @@ public class Sala extends AggregateEvent<SalaId> {
         return sala;
     }
 
-    public void modificarCedulaEmpleado(EmpleadoId entityId, Cedula cedula){
-        Objects.requireNonNull(entityId);
+    public void modificarCedulaEmpleado(EmpleadoId empleadoId, Cedula cedula, SalaId salaId){
+        Objects.requireNonNull(empleadoId);
         Objects.requireNonNull(cedula);
-        appendChange(new CedulaEmpleadoModificado(entityId,cedula));
+        Objects.requireNonNull(salaId);
+        appendChange(new CedulaEmpleadoModificado(empleadoId,cedula,salaId));
     }
     public void modificarDuracionPelicula(PeliculaId peliculaId, Duracion duracion){
         Objects.requireNonNull(peliculaId);
@@ -114,4 +116,8 @@ public class Sala extends AggregateEvent<SalaId> {
     public Empleado empleado() {
         return empleado;
     }
+
+
+
+
 }

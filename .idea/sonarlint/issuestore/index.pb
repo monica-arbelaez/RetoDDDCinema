@@ -2,8 +2,6 @@
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-^
-.src/main/java/domain/genericvalues/Nombre.java,0\5\0571fb1fb8033d8ee3de1c1a042498d532530dfe
 b
 2src/main/java/domain/cliente/values/ConsumoId.java,a\2\a2444cf1528b87ac74284e79d152261a953990cd
 `
@@ -30,12 +28,8 @@ j
 :src/main/java/domain/cliente/events/MembresiaGenerada.java,4\9\4900b4dbbdce67771205e8061c1a33b74829a0a9
 h
 8src/main/java/domain/boleto/events/PrecioModificado.java,e\2\e2b9585f5953d26e3b0cb3d34c49432f85e03ab4
-p
-@src/main/java/domain/cliente/events/TipoMembresiaModificada.java,f\6\f604a52d7534dd60f1e81eb701e26a05a2494fa9
 f
 6src/main/java/domain/sala/events/EmpleadoGenerado.java,1\c\1c99a8c288be1606b822576bde7de4ebab369068
-n
->src/main/java/domain/sala/events/CedulaEmpleadoModificado.java,8\a\8a80f801c9b15f9c310cae9651e6d1785074e1cb
 l
 <src/main/java/domain/sala/events/NombreDeSalaModificada.java,5\a\5a5b395072e8a847720ad62a094052a2998b958a
 n
@@ -78,8 +72,6 @@ p
 @src/main/java/domain/sala/command/ModificarDuracionPelicula.java,1\4\14d76d4ee76ee7ed0aca812215240d057b4fb0ca
 ^
 .src/main/java/domain/boleto/entity/Boleto.java,b\a\ba8fcd1c3e04f632e9fc06cc5fb0d314fb946cb7
-n
->src/main/java/domain/sala/command/ModificarCedulaEmpleado.java,0\2\02e7c2b6db14531bca7ccc59b8b099440e240345
 p
 @src/main/java/domain/sala/events/DuracionPeliculaModificada.java,c\3\c329f5e841ace8de2448089ca120f90d2b7eb231
 b

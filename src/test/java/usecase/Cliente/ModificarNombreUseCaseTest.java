@@ -34,7 +34,7 @@ class ModificarNombreUseCaseTest {
     public void modificarNombreHappyPath(){
         var command = new ModificarNombre(
                 ClienteId.of("4567"),
-                new Nombre("Ana")
+                new Nombre("Marcela")
         );
         when(repository.getEventsBy((any()))).thenReturn(eventsList());
     }

@@ -18,7 +18,7 @@ public class SalaChange extends EventChange {
           sala.nombre =event.getNombre();
        });
         apply((CedulaEmpleadoModificado event)->{
-            sala.modificarCedulaEmpleado(event.getEmpleadoId(),event.getCedula());
+            sala.modificarCedulaEmpleado(event.getEmpleadoId(),event.getCedula(),event.getSalaId());
 
         });
         apply((DuracionPeliculaModificada event)->{
