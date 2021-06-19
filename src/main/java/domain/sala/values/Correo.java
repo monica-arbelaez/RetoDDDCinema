@@ -11,9 +11,9 @@ public class Correo implements ValueObject<String> {
     public Correo(String value){
         Objects.requireNonNull(value, "El correo es obligatorio");
         if(value.isBlank()){
-            throw new IllegalReceiveException("el campo de la cedula no puede estar vacio");
+            throw new IllegalReceiveException("el campo  no puede estar vacio");
         }
-        if(value.matches("^([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$")){
+        if(!value.matches("^([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$")){
             throw new IllegalReceiveException("El cedula no puede tener caracteres");
         }
         this.value=value;

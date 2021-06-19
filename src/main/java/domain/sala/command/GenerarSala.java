@@ -5,6 +5,7 @@ import domain.genericvalues.Nombre;
 import domain.sala.entity.Empleado;
 import domain.sala.entity.Pelicula;
 import domain.sala.values.FechaHoraDeFuncionId;
+import domain.sala.values.SalaId;
 import domain.sala.values.Silla;
 
 import java.util.Set;
@@ -15,13 +16,20 @@ public class GenerarSala implements Command {
     private final Set<FechaHoraDeFuncionId> fechaHoraDeFuncionIds;
     private final Pelicula pelicula;
     private final Empleado empleado;
+    private final SalaId salaId;
 
-    public GenerarSala(Nombre nombre, Set<Silla> sillas, Set<FechaHoraDeFuncionId> fechaHoraDeFuncionIds, Pelicula pelicula, Empleado empleado) {
+    public GenerarSala(SalaId salaId, Nombre nombre, Set<Silla> sillas, Set<FechaHoraDeFuncionId> fechaHoraDeFuncionIds, Pelicula pelicula, Empleado empleado) {
         this.nombre = nombre;
         this.sillas = sillas;
         this.fechaHoraDeFuncionIds = fechaHoraDeFuncionIds;
         this.pelicula = pelicula;
         this.empleado = empleado;
+        this.salaId = salaId;
+    }
+
+
+    public SalaId getSalaId() {
+        return salaId;
     }
 
     public Nombre getNombre() {

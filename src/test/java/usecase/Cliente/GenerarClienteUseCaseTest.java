@@ -24,13 +24,19 @@ public class GenerarClienteUseCaseTest {
         generarClienteUseCase=new GenerarClienteUseCase();
     }
     @Test
-    public void setGenerarClienteHAppyPath(){
+    public void setGenerarClienteHappyPath(){
         var command = new GenerarCliente(
                 ClienteId.of("1234"),
                 new Nombre("Monica"),
-                new Membresia(MembresiaId.of("3456"),new TipoMembresia("Premium"), new FechaDeVencimiento(5,9,2022)),
+                new Membresia(MembresiaId.of("3456"),
+                        new TipoMembresia("Premium"),
+                        new FechaDeVencimiento(5,9,2022),
+                        ClienteId.of("3456")),
                 new BoletoId(),
-                new Consumo(ConsumoId.of("123"),new Precio(12345.0),new Descuento(123.0))
+                new Consumo(ClienteId.of("87655"),
+                        ConsumoId.of("123"),
+                        new Precio(12345.0),
+                        new Descuento(123.0))
         );
         var respose = UseCaseHandler.getInstance().syncExecutor(
                 generarClienteUseCase, new RequestCommand<>(command)

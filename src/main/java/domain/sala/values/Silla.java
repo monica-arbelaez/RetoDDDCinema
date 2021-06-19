@@ -5,28 +5,19 @@ import co.com.sofka.domain.generic.ValueObject;
 import java.util.Objects;
 import java.util.Set;
 
-public class Silla implements ValueObject<Set> {
-    private  final Set value;
+public class Silla implements ValueObject<String > {
+    private  final String value;
 
-    public Silla( Set value){
+    public Silla( String value){
         this.value = value;
         Objects.requireNonNull(value,  "Debes de tener una silla");
 
     }
-    public Set value() {
+    public String value() {
         return value;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Silla silla = (Silla) o;
-        return Objects.equals(value, silla.value);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(value);
+    public String getValue() {
+        return value;
     }
 }

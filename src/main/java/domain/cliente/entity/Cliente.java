@@ -2,7 +2,6 @@ package domain.cliente.entity;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofka.domain.generic.Entity;
 import domain.boleto.values.BoletoId;
 import domain.cliente.events.*;
 import domain.cliente.values.*;
@@ -36,15 +35,16 @@ public class Cliente extends AggregateEvent<ClienteId> {
         events.forEach(cliente::applyEvent);
         return cliente;
     }
-    public void modificarDescuento(ConsumoId entityId, Descuento descuento){
-        Objects.requireNonNull(entityId);
+    public void modificarDescuento(ClienteId clienteId, ConsumoId consumoId, Descuento descuento){
+        Objects.requireNonNull(consumoId);
         Objects.requireNonNull(descuento);
-        appendChange(new DescuentoDelConsumoModificado(entityId,descuento));
+        appendChange(new DescuentoDelConsumoModificado(consumoId, descuento, clienteId));
     }
-    public void modificarFechaMembresia(MembresiaId membresiaId, FechaDeVencimiento fechaDeVencimiento){
+    public void modificarFechaMembresia(ClienteId clienteId, MembresiaId membresiaId, FechaDeVencimiento fechaDeVencimiento){
         Objects.requireNonNull(membresiaId);
         Objects.requireNonNull(fechaDeVencimiento);
-        appendChange(new FechaMembresiaModificada(membresiaId, fechaDeVencimiento));
+        Objects.requireNonNull(clienteId);
+        appendChange(new FechaMembresiaModificada(membresiaId, fechaDeVencimiento, clienteId));
     }
     public  void generarMembresia( MembresiaId membresiaId, TipoMembresia tipoMembresia, FechaDeVencimiento fechaDeVencimiento ){
         Objects.requireNonNull(membresiaId);
@@ -57,10 +57,11 @@ public class Cliente extends AggregateEvent<ClienteId> {
         Objects.requireNonNull(nombre);
         appendChange(new NombreModificado(nombre, clienteId));
     }
-    public void modificarPrecioConsumo(Precio precio, ConsumoId consumoId){
+    public void modificarPrecioConsumo(ClienteId clienteId, ConsumoId consumoId,Precio precio){
         Objects.requireNonNull(consumoId);
         Objects.requireNonNull(precio);
-        appendChange(new PrecioConsumoModificado(consumoId,precio));
+        Objects.requireNonNull(clienteId);
+        appendChange(new PrecioConsumoModificado(clienteId, consumoId,precio));
     }
     public void modificarTipoMembresia(MembresiaId membresiaId, TipoMembresia tipoMembresia, FechaDeVencimiento fechaDeVencimiento ){
         Objects.requireNonNull(membresiaId);
@@ -83,5 +84,9 @@ public class Cliente extends AggregateEvent<ClienteId> {
 
     public Consumo consumo() {
         return consumo;
+    }
+
+
+    public void modificarFechaMembresia(MembresiaId membresiaId, FechaDeVencimiento fechaDeVencimiento) {
     }
 }

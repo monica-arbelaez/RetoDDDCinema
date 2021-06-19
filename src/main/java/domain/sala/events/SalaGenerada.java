@@ -11,6 +11,7 @@ import domain.sala.values.Silla;
 import java.util.Set;
 
 public class SalaGenerada extends DomainEvent {
+    private final SalaId salaId;
     private  final Nombre nombre;
     private final Set<Silla> sillas;
     private final Set<FechaHoraDeFuncionId> fechaHoraDeFuncionIds;
@@ -24,6 +25,7 @@ public class SalaGenerada extends DomainEvent {
         this.pelicula = pelicula;
         this.empleado = empleado;
         this.nombre = nombre;
+        this.salaId = salaId;
     }
 
 
@@ -45,6 +47,10 @@ public class SalaGenerada extends DomainEvent {
 
     public Empleado getEmpleado() {
         return empleado;
+    }
+
+    public SalaId getSalaId() {
+        return salaId;
     }
 }
 

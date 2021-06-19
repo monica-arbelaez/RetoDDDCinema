@@ -3,7 +3,7 @@ package domain.sala.values;
 import co.com.sofka.domain.generic.Identity;
 
 public class FechaHoraDeFuncionId extends Identity {
-    private FechaHoraDeFuncionId(String id) {
+    public FechaHoraDeFuncionId(String id) {
         super(id);
     }
 

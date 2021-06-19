@@ -7,7 +7,7 @@ import domain.cliente.command.GenerarCliente;
 import domain.cliente.entity.Cliente;
 
 
-public class GenerarClienteUseCase  extends UseCase<RequestCommand<GenerarCliente>, ResponseEvents> {
+public class GenerarClienteUseCase extends UseCase<RequestCommand<GenerarCliente>, ResponseEvents> {
 
     @Override
     public void executeUseCase(RequestCommand<GenerarCliente> generarClienteRequestCommand) {

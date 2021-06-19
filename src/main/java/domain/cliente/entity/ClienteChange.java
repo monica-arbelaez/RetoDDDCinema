@@ -13,7 +13,7 @@ public class ClienteChange extends EventChange {
            cliente.consumo = event.getConsumo();
         });
         apply((DescuentoDelConsumoModificado event)->{
-            cliente.modificarDescuento(event.getConsumoId(),event.getDescuento());
+            cliente.modificarDescuento(event.getClienteId(),event.getConsumoId(),event.getDescuento());
 
         });
         apply((FechaMembresiaModificada event)->{
@@ -26,7 +26,7 @@ public class ClienteChange extends EventChange {
            cliente.modificarNombre(event.getClienteId(),event.getNombre());
         });
         apply((PrecioConsumoModificado event)->{
-            cliente.modificarPrecioConsumo(event.getPrecio(), event.getConsumoId());
+            cliente.modificarPrecioConsumo(event.getClienteId(),event.getConsumoId(), event.getPrecio());
         });
         apply((TipoMembresiaModificada event)->{
             cliente.modificarTipoMembresia(event.getMembresiaId(),event.getTipoMembresia(),event.getFechaDeVencimiento());

@@ -3,6 +3,7 @@ package domain.sala.entity;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofka.domain.generic.Entity;
+import domain.boleto.events.SillaModificada;
 import domain.genericvalues.Nombre;
 import domain.sala.events.*;
 import domain.sala.values.*;
@@ -34,11 +35,12 @@ public class Sala extends AggregateEvent<SalaId> {
         super(entituId);
         subscribe((new SalaChange(this)));
     }
-    public static  Sala From(SalaId salaId, List<DomainEvent> events){
+    public static Sala from(SalaId salaId, List<DomainEvent> events){
         var sala = new Sala(salaId);
         events.forEach((sala::applyEvent));
         return sala;
     }
+
     public void modificarCedulaEmpleado(EmpleadoId entityId, Cedula cedula){
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(cedula);
@@ -88,6 +90,7 @@ public class Sala extends AggregateEvent<SalaId> {
         Objects.requireNonNull(fechaHoraDeFuncionIds);
         Objects.requireNonNull(pelicula);
         Objects.requireNonNull(empleado);
+        appendChange(new SalaModificada(salaId, sillas,fechaHoraDeFuncionIds,pelicula,empleado));
     }
 
 
