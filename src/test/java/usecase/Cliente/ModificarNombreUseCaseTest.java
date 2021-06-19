@@ -1,6 +1,8 @@
 package usecase.Cliente;
 
+import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
+import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.domain.generic.DomainEvent;
 import domain.boleto.values.BoletoId;
 import domain.cliente.command.ModificarNombre;
@@ -25,7 +27,7 @@ class ModificarNombreUseCaseTest {
     private DomainEventRepository repository;
 
     @BeforeEach
-    public void setuo(){
+    public void setup(){
         modificarNombreUseCase = new ModificarNombreUseCase();
         repository = mock(DomainEventRepository.class);
         modificarNombreUseCase.addRepository(repository);
@@ -37,6 +39,12 @@ class ModificarNombreUseCaseTest {
                 new Nombre("Marcela")
         );
         when(repository.getEventsBy((any()))).thenReturn(eventsList());
+
+        var response = UseCaseHandler.getInstance().setIdentifyExecutor("xxxx")
+                .syncExecutor(modificarNombreUseCase, new RequestCommand<>(command))
+                .orElseThrow();
+        var events = response.getDomainEvents();
+        NombreModificado nombreModificado = (NombreModificado) events.get(0);
     }
     private List<DomainEvent>eventsList(){
         return List.of(

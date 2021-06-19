@@ -42,17 +42,14 @@ public class Sala extends AggregateEvent<SalaId> {
         return sala;
     }
 
+
     public void modificarCedulaEmpleado(EmpleadoId empleadoId, Cedula cedula, SalaId salaId){
         Objects.requireNonNull(empleadoId);
         Objects.requireNonNull(cedula);
         Objects.requireNonNull(salaId);
         appendChange(new CedulaEmpleadoModificado(empleadoId,cedula,salaId));
     }
-    public void modificarDuracionPelicula(PeliculaId peliculaId, Duracion duracion){
-        Objects.requireNonNull(peliculaId);
-        Objects.requireNonNull(duracion);
-        appendChange(new DuracionPeliculaModificada(peliculaId,duracion));
-    }
+
     public void GenerarEmpleado(EmpleadoId empleadoId, Nombre nombre, Correo correo, Cedula cedula){
         Objects.requireNonNull(empleadoId);
         Objects.requireNonNull(nombre);
@@ -93,6 +90,12 @@ public class Sala extends AggregateEvent<SalaId> {
         Objects.requireNonNull(pelicula);
         Objects.requireNonNull(empleado);
         appendChange(new SalaModificada(salaId, sillas,fechaHoraDeFuncionIds,pelicula,empleado));
+    }
+    public void modificarDuracionPelicula(PeliculaId peliculaId, Duracion duracion, SalaId salaId){
+        Objects.requireNonNull(peliculaId);
+        Objects.requireNonNull(duracion);
+        Objects.requireNonNull(salaId);
+        appendChange(new DuracionPeliculaModificada(peliculaId,duracion,salaId));
     }
 
 

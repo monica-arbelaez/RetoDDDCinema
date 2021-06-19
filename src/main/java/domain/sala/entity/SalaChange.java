@@ -22,7 +22,7 @@ public class SalaChange extends EventChange {
 
         });
         apply((DuracionPeliculaModificada event)->{
-            sala.modificarDuracionPelicula(event.getPeliculaId(),event.getDuracion());
+            sala.modificarDuracionPelicula(event.getPeliculaId(),event.getDuracion(),event.getSalaId());
         });
         apply((EmpleadoGenerado event)->{
             sala.GenerarEmpleado(event.getEmpleadoId(),event.getNombre(),event.getCorreo(),event.getCedula());

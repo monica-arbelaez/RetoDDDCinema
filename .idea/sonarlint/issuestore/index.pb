@@ -68,11 +68,7 @@ n
 >src/main/java/domain/sala/command/ModificarNombreEmpleado.java,a\0\a06a46d57a2e214a3b1fa7fcfdacfb0bdbc0f317
 n
 >src/main/java/domain/sala/command/ModificarNombrePelicula.java,7\1\718153f5ffdf53646ab5bff5320984c4072df405
-p
-@src/main/java/domain/sala/command/ModificarDuracionPelicula.java,1\4\14d76d4ee76ee7ed0aca812215240d057b4fb0ca
 ^
 .src/main/java/domain/boleto/entity/Boleto.java,b\a\ba8fcd1c3e04f632e9fc06cc5fb0d314fb946cb7
-p
-@src/main/java/domain/sala/events/DuracionPeliculaModificada.java,c\3\c329f5e841ace8de2448089ca120f90d2b7eb231
 b
 2src/main/java/domain/cliente/values/Descuento.java,3\e\3e033ef4b64b7ecd5b0489ebd190a0788d05be65
