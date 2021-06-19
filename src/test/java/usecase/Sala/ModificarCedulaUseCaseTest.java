@@ -24,7 +24,7 @@ class ModificarCedulaUseCaseTest {
     private DomainEventRepository repository;
 
     @BeforeEach
-    public void setuo(){
+    public void setup(){
         modificarCedulaUseCase = new ModificarCedulaUseCase();
         repository = mock(DomainEventRepository.class);
         modificarCedulaUseCase.addRepository(repository);

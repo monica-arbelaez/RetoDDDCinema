@@ -30,8 +30,6 @@ h
 8src/main/java/domain/boleto/events/PrecioModificado.java,e\2\e2b9585f5953d26e3b0cb3d34c49432f85e03ab4
 f
 6src/main/java/domain/sala/events/EmpleadoGenerado.java,1\c\1c99a8c288be1606b822576bde7de4ebab369068
-l
-<src/main/java/domain/sala/events/NombreDeSalaModificada.java,5\a\5a5b395072e8a847720ad62a094052a2998b958a
 n
 >src/main/java/domain/sala/events/NombrePeliculaModificada.java,9\9\9993fc7e044381d4ed973844532f8ed74e84f283
 n
@@ -62,8 +60,6 @@ c
 3src/main/java/domain/sala/command/ModificaSala.java,9\f\9fb5f22841cced0303837a1b05bffdb1d70c46fe
 f
 6src/main/java/domain/sala/command/GenerarPelicula.java,a\1\a1a62dc37f2cadd45c72b77aeee250f85e1d30b4
-l
-<src/main/java/domain/sala/command/ModificarNombreDeSala.java,1\1\11d9a8a25fbf1b9b2503cbf04ef85abddbb4bddf
 n
 >src/main/java/domain/sala/command/ModificarNombreEmpleado.java,a\0\a06a46d57a2e214a3b1fa7fcfdacfb0bdbc0f317
 n
