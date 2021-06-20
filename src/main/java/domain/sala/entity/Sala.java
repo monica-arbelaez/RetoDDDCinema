@@ -67,10 +67,11 @@ public class Sala extends AggregateEvent<SalaId> {
         Objects.requireNonNull(nombre);
         appendChange(new NombreDeSalaModificada(salaId,nombre));
     }
-    public void ModificarNombreEmplado(EmpleadoId empleadoId, Nombre nombre){
+    public void ModificarNombreEmplado(EmpleadoId empleadoId, Nombre nombre,SalaId salaId){
         Objects.requireNonNull(empleadoId);
         Objects.requireNonNull(nombre);
-        appendChange(new NombreEmpleadoModificado(empleadoId,nombre));
+        Objects.requireNonNull(salaId);
+        appendChange(new NombreEmpleadoModificado(empleadoId,nombre,salaId));
     }
     public void ModificarNombrePelicula(PeliculaId peliculaId, Nombre nombre){
         Objects.requireNonNull(peliculaId);

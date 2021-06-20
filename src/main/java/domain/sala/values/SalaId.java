@@ -4,7 +4,7 @@ package domain.sala.values;
 import co.com.sofka.domain.generic.Identity;
 
 public class SalaId extends Identity {
-    private SalaId(String id) {
+    public SalaId(String id) {
         super(id);
     }
 

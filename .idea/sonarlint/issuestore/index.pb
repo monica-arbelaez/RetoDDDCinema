@@ -32,8 +32,6 @@ f
 6src/main/java/domain/sala/events/EmpleadoGenerado.java,1\c\1c99a8c288be1606b822576bde7de4ebab369068
 n
 >src/main/java/domain/sala/events/NombrePeliculaModificada.java,9\9\9993fc7e044381d4ed973844532f8ed74e84f283
-n
->src/main/java/domain/sala/events/NombreEmpleadoModificado.java,2\3\2343b4c4cf8637d99c67bddc9c8719da53dfe8b3
 f
 6src/main/java/domain/boleto/events/BoletoGenerado.java,b\a\ba8e5a0bca7ef03e1842b7dfa23680d088cd38b3
 f
@@ -60,8 +58,6 @@ c
 3src/main/java/domain/sala/command/ModificaSala.java,9\f\9fb5f22841cced0303837a1b05bffdb1d70c46fe
 f
 6src/main/java/domain/sala/command/GenerarPelicula.java,a\1\a1a62dc37f2cadd45c72b77aeee250f85e1d30b4
-n
->src/main/java/domain/sala/command/ModificarNombreEmpleado.java,a\0\a06a46d57a2e214a3b1fa7fcfdacfb0bdbc0f317
 n
 >src/main/java/domain/sala/command/ModificarNombrePelicula.java,7\1\718153f5ffdf53646ab5bff5320984c4072df405
 ^

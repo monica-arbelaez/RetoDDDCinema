@@ -34,7 +34,7 @@ public class SalaChange extends EventChange {
             sala.ModificarNombreDeSala(event.getSalaId(),event.getNombre());
         });
         apply((NombreEmpleadoModificado event)->{
-            sala.ModificarNombreEmplado(event.getEmpleadoId(),event.getNombre());
+            sala.ModificarNombreEmplado(event.getEmpleadoId(),event.getNombre(),event.getSalaId());
         });
         apply((NombrePeliculaModificada event)->{
             sala.ModificarNombrePelicula(event.getPeliculaId(),event.getNombre());
