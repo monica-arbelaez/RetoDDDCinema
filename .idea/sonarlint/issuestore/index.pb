@@ -8,8 +8,6 @@ b
 0src/main/java/domain/sala/values/PeliculaId.java,5\b\5bf9cd66e7273b50fcf233ba1eab6797819333d4
 \
 ,src/main/java/domain/sala/values/SalaId.java,0\5\05195c89ca0232bbef4e97c71d0fe25e66fab8c8
-`
-0src/main/java/domain/sala/values/EmpleadoId.java,6\2\629b7a901d714bc21b2216db377c84b8bb851470
 \
 ,src/main/java/domain/sala/values/Cedula.java,2\4\2463147d9d33c2057ec955770da43a55fa2ed336
 h

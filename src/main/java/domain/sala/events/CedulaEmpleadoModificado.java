@@ -8,7 +8,7 @@ import domain.sala.values.SalaId;
 
 public class CedulaEmpleadoModificado extends DomainEvent {
     private final EmpleadoId empleadoId;
-    private  final Cedula cedula;
+    private final Cedula cedula;
     private final SalaId salaId;
 
     public CedulaEmpleadoModificado(EmpleadoId empleadoId, Cedula cedula,SalaId salaId) {
